@@ -30,6 +30,7 @@ class PetsController < ApplicationController
   get '/pets/:id/edit'
     @pet = Pet.find_by_id(params[:id])
     erb :'/pets/edit'
+  end
 
   patch '/pets/:id' do
     @pet = Pet.find_by_id(params[:id])
