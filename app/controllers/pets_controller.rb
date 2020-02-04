@@ -15,7 +15,7 @@ class PetsController < ApplicationController
        @pet.owner = Owner.find_by_id(params[:pet][:owner_id])
      end
      @pet.save
-     if params[:owner][:name].size > 0
+     if params[:owner][:name] != ""
        @pet.owner = Owner.create(name: params["owner"]["name"])
        @pet.save
      end
